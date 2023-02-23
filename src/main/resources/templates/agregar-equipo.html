@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http:thymelead.org">
+
+<head th:replace="fragments/fragments :: head"></head>
+<body class="container">
+	<header th:replace="fragments/fragments :: header"></header>
+
+
+	<div th:object="${entityEquipo}" th:remove="tag">
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+		</ul>
+	</div>
+
+
+	<form th:action="@{../agregar-equipo}" th:object="${entityEquipo}"
+		method="post">
+		<input type="number" th:field="*{id}" hidden> <input
+			type="text" th:field="*{equipo}" placeholder="Nombre"><br>
+		<input type="text" th:field="*{pais}" placeholder="Pais"><br>
+		<input type="date" th:field="*{fechaDeRegistro}" hidden><br>
+		<input type="submit" value="Guardar">
+	</form>
+
+	
+	<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>

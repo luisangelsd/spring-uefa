@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/fragments :: head" ></head>
+<body class="container">
+
+	<header th:replace="fragments/fragments :: header"  ></header>
+	
+	
+	<!-- ********* Configuración 403 **************** -->
+	<br><br>
+	<div>
+		<h1>¡Acceso Denegado!</h1>
+		<p>
+			Lo sentimos <span sec:authentication="name">, no tienes acceso a esta url.
+		</p>
+		<a th:href="@{/}">Volver al Home</a>
+	</div>
+	<br><br><br><hr>
+	<!-- ********* Configuración 403 **************** -->
+	
+	
+	<header th:replace="fragments/fragments :: footer"  ></header>
+</body>
+</html>

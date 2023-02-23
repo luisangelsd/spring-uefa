@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/fragments :: head"></head>
+
+<body class="container">
+	<header th:replace="fragments/fragments :: header"></header>
+
+
+
+	<div sec:authorize="isAuthenticated()">
+		<h2>Mi Cuenta:</h2>
+		<ul>
+			<li>
+				Nombre: <span sec:authentication="name"></span>
+			</li>
+
+			<li>
+				Rol: <span sec:authentication="principal.authorities"></span>
+			</li>
+
+			<li sec:authorize="hasRole('ADMIN')">
+				Tienes todos los permisos de administrador (Guardar, Editar y Eliminar).
+			</li>
+
+			<li sec:authorize="hasRole('USER')">
+				Tienes todos los permisos de usuario (Guardar y Editar).
+			</li>
+
+		</ul>
+	</div>
+
+
+	<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>

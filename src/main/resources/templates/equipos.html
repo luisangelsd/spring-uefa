@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head th:replace="fragments/fragments :: head" ></head>
+<body class="container">
+
+	<header th:replace="fragments/fragments :: header"  ></header>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Equipo:</th>
+		      <th scope="col">País:</th>
+		      <th scope="col">Fecha de Registro:</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="equipo: ${entityEquipo}">
+				  <td th:text="${equipo.id}"></td>
+				  <td th:text="${equipo.equipo}"></td>
+				  <td th:text="${equipo.pais}"></td>
+				  <td th:text="${equipo.fechaDeRegistro}"></td>
+				  <td>
+				  <a th:href="@{editar/}+${equipo.id}" sec:authorize="isAuthenticated()" ><button>Editar</button></a>
+				  <a th:href="@{eliminar/}+ ${equipo.id}" sec:authorize="hasRole('ADMIN')" ><button>Eliminar</button></a>
+				  </td>
+				</tr>
+		  
+		  </tbody>
+		</table>
+			
+	
+	
+	<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>
