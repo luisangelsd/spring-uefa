@@ -7,4 +7,6 @@ El objetivo de este proyecto es poder consumir una API publica utilizando Angula
 + Consumo de API
 + Componentes
 + Servicios
-+ Entre otros
++ HTML5
++ CSS3
++ TypeScript
