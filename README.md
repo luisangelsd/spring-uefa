@@ -1,12 +1,19 @@
 # Documentación
-El objetivo de este proyecto es poder consumir una API publica utilizando Angular con todas sus funcionalidades. La aplicación te muestra de forma aleatoria las frases mas épicas de la serie “Breaking Bad”
+¡UEFA! Es una Página Web que te permite poder administrar los participantes en el torneo UEFA Champions Legue. Este proyecto tiempo como objetivo poner algunos conocimientos en practica y/o experimentos.
 
-**Nota:** El proyecto ya viene configurado, solamente tienes que descargar y ejecutarlo
+De igual manera el proyecto cuenta con Spring Security lo que nos permite poder administrar los registros mediante permisos de usuario y administración.
 
-## Algunas Características Importantes:
-+ Consumo de API
-+ Componentes
-+ Servicios
-+ HTML5
-+ CSS3
-+ TypeScript
++ **Nota 1:** El proyecto ya viene configurado, solamente tienes que descargar y ejecutarlo.
++ **Nota 2:** El proyecto contiene datos de prueba
+
+
+## Dependencias Destacadas:
++  spring-boot-starter-web
++  spring-boot-starter-data-jpa
++ spring-boot-starter-thymeleaf
++ spring-boot-starter-validation
++ spring-boot-starter-security
++ thymeleaf-extras-springsecurity5
++ spring-boot-devtools
++ h2
+
